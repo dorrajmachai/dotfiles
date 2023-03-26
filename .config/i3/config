@@ -251,6 +251,5 @@ bindsym $mod+BackSpace mode "$mode_system"
 bar {
 	font pango:Iosevka Nerd Font 10
 	position bottom
-	status_command ~/.config/i3/bumblebee-status/bumblebee-status -m memory battery time \
-	disk:root \
+	status_command i3status 
 }

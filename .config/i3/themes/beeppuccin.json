@@ -1,0 +1,10 @@
+{
+	"defaults": {
+		"fg": "#a6adc8",
+		"bg": "#1e1e2e",
+		"warning": {
+			"fg": "#a6adc8",
+			"bg": "f38ba8"
+		}
+	}
+}

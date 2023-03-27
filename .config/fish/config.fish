@@ -3,5 +3,6 @@ if status is-interactive
     alias config "/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME"
 	fish_add_path "$HOME/.cargo/bin"
 	fish_add_path "$HOME/.cargo/bin/neovide"
+	fish_add_path "$HOME/.local/bin"
 	alias nv "nvim"
 end

@@ -1,0 +1,200 @@
+{
+	"name": "sqlnotebook",
+	"displayName": "SQL Notebook",
+	"publisher": "cmoog",
+	"description": "View SQL files as notebooks. Execute cells and view query output.",
+	"icon": "media/logo128.png",
+	"repository": {
+		"url": "https://github.com/cmoog/vscode-sql-notebook"
+	},
+	"version": "0.6.0",
+	"preview": false,
+	"engines": {
+		"vscode": "^1.59.0"
+	},
+	"categories": [
+		"Data Science",
+		"Notebooks",
+		"Visualization"
+	],
+	"activationEvents": [
+		"onNotebook:sql-notebook",
+		"onView:sqlnotebook-connections"
+	],
+	"main": "./dist/index.js",
+	"capabilities": {
+		"virtualWorkspaces": true,
+		"untrustedWorkspaces": {
+			"supported": false
+		}
+	},
+	"extensionKind": [
+		"workspace"
+	],
+	"contributes": {
+		"notebooks": [
+			{
+				"type": "sql-notebook",
+				"displayName": "SQL Notebook",
+				"priority": "option",
+				"selector": [
+					{
+						"filenamePattern": "*.sql"
+					}
+				]
+			}
+		],
+		"menus": {
+			"view/item/context": [
+				{
+					"command": "sqlnotebook.connect",
+					"when": "view == sqlnotebook-connections &&  viewItem == database",
+					"group": "inline"
+				},
+				{
+					"command": "sqlnotebook.connect",
+					"when": "view == sqlnotebook-connections &&  viewItem == database"
+				},
+				{
+					"command": "sqlnotebook.deleteConnectionConfiguration",
+					"when": "view == sqlnotebook-connections &&  viewItem == database"
+				}
+			],
+			"view/title": []
+		},
+		"commands": [
+			{
+				"command": "sqlnotebook.connect",
+				"title": "Connect to Database",
+				"icon": {
+					"dark": "media/dark/dbconnection.svg",
+					"light": "media/light/dbconnection.svg"
+				}
+			},
+			{
+				"command": "sqlnotebook.deleteConnectionConfiguration",
+				"title": "Delete SQL Connection Configuration"
+			},
+			{
+				"command": "sqlnotebook.refreshConnectionPanel",
+				"title": "Refresh SQL Connection Panel",
+				"shortTitle": "Refresh"
+			}
+		],
+		"viewsContainers": {
+			"activitybar": [
+				{
+					"id": "sqlnotebook",
+					"title": "SQL Notebook",
+					"icon": "media/logo.svg"
+				}
+			]
+		},
+		"configuration": {
+			"title": "SQL Notebook",
+			"properties": {
+				"SQLNotebook.useLanguageServer": {
+					"type": "boolean",
+					"default": false,
+					"description": "(Unstable) Use embeded language server for intelligent completion and hover information."
+				},
+				"SQLNotebook.queryTimeout": {
+					"type": "number",
+					"default": 30000,
+					"description": "Query timeout in milliseconds for cell query execution."
+				},
+				"SQLNotebook.maxResultRows": {
+					"type": "number",
+					"default": 25,
+					"description": "Maximum number of result rows to display before truncating result table."
+				}
+			}
+		},
+		"views": {
+			"sqlnotebook": [
+				{
+					"id": "sqlnotebook-connections",
+					"name": "SQL Connections",
+					"visibility": "visible",
+					"icon": "media/logo.svg",
+					"contextualTitle": "Connections"
+				},
+				{
+					"type": "webview",
+					"id": "sqlnotebook.connectionForm",
+					"name": "New SQL Connection",
+					"contextualTitle": "New Connection",
+					"visibility": "visible"
+				},
+				{
+					"id": "sqlnotebook-helpfeedback",
+					"name": "Help and Feedback",
+					"visibility": "collapsed",
+					"icon": "media/logo.svg",
+					"contextualTitle": "Help and Feedback"
+				}
+			]
+		}
+	},
+	"scripts": {
+		"build": "vsce package",
+		"vscode:prepublish": "npm run compile",
+		"compile": "npm run build:server && npm run build:webview && mkdir -p ./dist/node_modules/sql.js/dist && cp -r ./node_modules/sql.js ./dist/node_modules",
+		"build:server": "esbuild ./src/main.ts --minify --bundle --platform=node --external:vscode --external:pg-native --outfile=./dist/index.js",
+		"build:webview": "esbuild ./webview/main.tsx --minify --bundle --outfile=./dist/webview/main-bundle.js",
+		"clean": "rm -rf ./dist",
+		"lint": "eslint src --ext ts",
+		"watch": "npm run build:server -- --watch & npm run build:webview -- --watch",
+		"fmt": "prettier --write --ignore-path .gitignore ."
+	},
+	"devDependencies": {
+		"@types/escape-html": "^1.0.1",
+		"@types/glob": "^7.1.3",
+		"@types/mocha": "^8.2.2",
+		"@types/mssql": "^7.1.3",
+		"@types/node": "14.x",
+		"@types/pg": "^8.6.1",
+		"@types/react": "^17.0.37",
+		"@types/react-dom": "^17.0.11",
+		"@types/sql.js": "^1.4.3",
+		"@types/vscode": "^1.59.0",
+		"@types/vscode-notebook-renderer": "^1.57.8",
+		"@types/vscode-webview": "^1.57.0",
+		"@typescript-eslint/eslint-plugin": "^5.30.7",
+		"@typescript-eslint/parser": "^5.30.7",
+		"esbuild": "^0.14.49",
+		"eslint": "^8.20.0",
+		"glob": "^7.1.7",
+		"ovsx": "^0.3.0",
+		"prettier": "^2.6.0",
+		"typescript": "^4.7.4",
+		"vsce": "^2.10.0",
+		"vscode-notebook-error-overlay": "^1.0.1",
+		"vscode-test": "^1.5.2"
+	},
+	"dependencies": {
+		"@vscode/webview-ui-toolkit": "^0.9.3",
+		"mssql": "^7.2.1",
+		"mysql2": "^2.3.0",
+		"pg": "^8.7.1",
+		"react": "^17.0.2",
+		"react-dom": "^17.0.2",
+		"sql.js": "^1.7.0",
+		"vscode-languageclient": "^7.0.0"
+	},
+	"prettier": {
+		"semi": true,
+		"singleQuote": true
+	},
+	"__metadata": {
+		"id": "dd781ac8-522b-4507-9225-331e70e260c5",
+		"publisherId": "d86ec6ca-57c8-4d0c-a466-48e9c43c7d58",
+		"publisherDisplayName": "cmoog",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"updated": false,
+		"isPreReleaseVersion": false,
+		"installedTimestamp": 1680110861785,
+		"preRelease": false
+	}
+}

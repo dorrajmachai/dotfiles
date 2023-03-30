@@ -5,4 +5,5 @@ if status is-interactive
 	fish_add_path "$HOME/.cargo/bin/neovide"
 	fish_add_path "$HOME/.local/bin"
 	alias nv "nvim"
+    alias v "vim"
 end

@@ -1,17 +1,92 @@
 vim9script
 
-" Install vim-plug if not found
+# BEGIN VIM-PLUG BOOTSTRAP
+# Install vim-plug if not found
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 endif
 
-" Run PlugInstall if there are missing plugins
+# Run PlugInstall if there are missing plugins
 autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
   \| PlugInstall --sync | source $MYVIMRC
 \| endif
 
+# END VIM-PLUG
+
+# BEGIN GENERAL OPTIONS
+if !has('gui_running')
+  set t_Co=256
+endif
+
+set nocompatible
+
+g:mapleader = " "
+
+syntax on
+
+set backspace=indent,eol,start
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set scrolloff=5
+set laststatus=2
+set number
+set relativenumber
+set hlsearch
+set incsearch
+
+set showcmd
+set showmatch
+set ignorecase
+set hidden
+set nohls
+set splitright
+set splitbelow
+set termguicolors
+set numberwidth=4
+set autoindent
+
+g:guifont = "Iosevka Nerd Font:h14"
+set sidescrolloff=8
+set clipboard="unnamedplus"
+set cmdheight=1
+set timeoutlen=1000
+set updatetime=100
+set nowritebackup
+set fileencoding="utf-8"
+set pumheight=10
+set cmdheight=1
+
+set conceallevel=0
+set noshowmode
+# END GENERAL OPTIONS
+
+# BEGIN KEYMAPS
+# Normal mode keymaps
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+nnoremap <S-l> <cmd>:bnext<cr>
+nnoremap <S-h> <cmd>:bprevious<cr>
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
+
+# Insert mode keymaps
+inoremap jk <Esc>
+
+# END KEYMAPS
+
+# BEGIN PLUGINS
 call plug#begin()
-	Plug 'catppuccin/vim', { 'as': 'catppuccin' }
+	Plug 'catppuccin/vim', { 'as': 'catppuccin' } # Catppuccin Theme
+    Plug 'tpope/vim-surround'
+    Plug 'vim-airline/vim-airline'
+    Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
+# END PLUGINS
+
+colorscheme catppuccin_mocha
+g:airline_theme = 'catppuccin_mocha'

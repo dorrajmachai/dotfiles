@@ -1,3 +1,12 @@
 let g:netrw_dirhistmax  =10
 let g:netrw_dirhistcnt =1
-let g:netrw_dirhist_1='/home/emaget_'
+let g:netrw_dirhist_1='/home/emaget_/.vim/plugged/catppuccin/colors'
+let g:netrw_dirhist_0='/home/emaget_/.vim/plugged/catppuccin'
+let g:netrw_dirhist_9='/home/emaget_/.vim/plugged'
+let g:netrw_dirhist_8='/home/emaget_/.vim'
+let g:netrw_dirhist_7='/home/emaget_/.vim/plugged/catppuccin/colors'
+let g:netrw_dirhist_6='/home/emaget_/.vim/plugged/catppuccin'
+let g:netrw_dirhist_5='/home/emaget_/.vim/plugged'
+let g:netrw_dirhist_4='/home/emaget_/.vim'
+let g:netrw_dirhist_3='/home/emaget_/Documents/projects/python-lsp-test'
+let g:netrw_dirhist_2='/home/emaget_/Documents/projects/html-lsp-test'

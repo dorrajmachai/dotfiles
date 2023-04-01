@@ -7,7 +7,6 @@ if status is-interactive
 	fish_add_path "$HOME/.config/nvim/lua-language-lerver/bin/lua-language-server"
 	fish_add_path "$HOME/bin"
 	fish_add_path "/opt/gradle/gradle-8.0.2/bin"
-	fish_add_path "~/.npm-global/bin"
 
 	alias exercism "/home/emaget_/bin/exercism-3.1.0-linux-x86_64/exercism"
 	alias nv "nvim"

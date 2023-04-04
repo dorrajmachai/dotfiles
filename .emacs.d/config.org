@@ -1,5 +1,18 @@
 * Hello, welcome to my Emacs config!
 
 #+begin_src emacs-lisp
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
 (menu-bar-mode -1)
+(tool-bar-mode -1)
+(scroll-bar-mode -1)
 #+end_src
+
+* Sources
+
+Below is a list of all of the sources I used to configure this file.
+
+- https://emacs.stackexchange.com/questions/2999/how-to-maximize-my-emacs-frame-on-start-up
+- https://github.com/ianyepan/yay-evil-emacs/blob/master/init.el
+- https://www.masteringemacs.org/article/keyboard-macros-are-misunderstood
+- https://www.ubuntupit.com/how-to-install-and-use-gnu-emacs-on-linux-distributions/
+- https://emacs.stackexchange.com/questions/3143/can-i-use-org-mode-to-structure-my-emacs-or-other-el-configuration-file

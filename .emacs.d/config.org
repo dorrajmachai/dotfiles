@@ -1,0 +1,5 @@
+* Hello, welcome to my Emacs config!
+
+#+begin_src emacs-lisp
+(menu-bar-mode -1)
+#+end_src

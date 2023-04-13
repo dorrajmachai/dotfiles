@@ -40,4 +40,4 @@ SETUVAR fish_pager_color_selected_background:\x1d
 SETUVAR fish_pager_color_selected_completion:\x1d
 SETUVAR fish_pager_color_selected_description:\x1d
 SETUVAR fish_pager_color_selected_prefix:\x1d
-SETUVAR fish_user_paths:/home/emaget_/emacs\x1e/opt/gradle/gradle\x2d8\x2e0\x2e2/bin\x1e/home/emaget_/bin\x1e/home/emaget_/\x2elocal/bin\x1e/home/emaget_/\x2envm\x1e/home/emaget_/\x2ecargo/bin
+SETUVAR fish_user_paths:/home/emaget_/\x2elocal/bin\x1e/home/emaget_/\x2erbenv/plugins/ruby\x2dbuild/bin\x1e/home/emaget_/\x2erbenv/bin\x1e/home/emaget_/emacs\x1e/opt/gradle/gradle\x2d8\x2e0\x2e2/bin\x1e/home/emaget_/bin\x1e/home/emaget_/\x2elocal/bin\x2envm\x1e/home/emaget_/\x2ecargo/bin

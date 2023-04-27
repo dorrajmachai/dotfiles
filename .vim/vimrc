@@ -93,6 +93,7 @@ call plug#begin()
     Plug 'vim-airline/vim-airline' # Simple statusline for Vim
     Plug 'jiangmiao/auto-pairs' #  For pairing brackets and quotes
     Plug 'mbbill/undotree'
+    Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 
 # END PLUGINS

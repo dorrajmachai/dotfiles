@@ -10,6 +10,10 @@ These items turn Emacs into something more minimal, something more familiar. I l
 
 * Packages
 
+#+begin_src emacs-lisp
+(package-initialize)
+#+end_src
+
 ** Helm
 
 #+begin_src emacs-lisp

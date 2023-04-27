@@ -1,0 +1,21 @@
+
+let guicursor = "n-v-c-i:block"
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv-gv
+
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | $MYVIMRC
+endif
+
+call plug#begin()
+Plug 'tpope/vim-surround'
+call plug#end()
+
+
+if exists('g:vscode')
+	xnoremap <C-P> <Cmd>call VSCodeNotify('workbench.action.showCommands', 1)<CR>
+else
+
+end

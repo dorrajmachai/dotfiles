@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="reverse-string/src/main/java"/>
+	<classpathentry kind="src" path="reverse-string/src/test/java"/>
+	<classpathentry kind="src" path="squeaky-clean/src/main/java"/>
+	<classpathentry kind="src" path="squeaky-clean/src/test/java"/>
+	<classpathentry kind="output" path="reverse-string/bin/main"/>
+</classpath>

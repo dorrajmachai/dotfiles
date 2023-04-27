@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ReverseStringTest" tests="6" skipped="5" failures="0" errors="0" timestamp="2023-03-31T16:31:52" hostname="fedora" time="0.002">
+<testsuite name="ReverseStringTest" tests="6" skipped="5" failures="0" errors="0" timestamp="2023-04-04T13:03:11" hostname="fedora" time="0.003">
   <properties/>
   <testcase name="testAWord" classname="ReverseStringTest" time="0.0">
     <skipped/>
@@ -11,7 +11,7 @@
   <testcase name="testASentenceWithPunctuation" classname="ReverseStringTest" time="0.0">
     <skipped/>
   </testcase>
-  <testcase name="testAPalindrome" classname="ReverseStringTest" time="0.001">
+  <testcase name="testAPalindrome" classname="ReverseStringTest" time="0.0">
     <skipped/>
   </testcase>
   <testcase name="testAnEvenSizedWord" classname="ReverseStringTest" time="0.0">

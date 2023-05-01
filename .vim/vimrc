@@ -88,10 +88,10 @@ vnoremap K :m '<-2<CR>gv=gv
 # BEGIN PLUGINS
 call plug#begin()
 	Plug 'catppuccin/vim', { 'as': 'catppuccin' } # Catppuccin Theme
-	Plug 'tpope/vim-surround' # Vim Surround, which I use for everything
+#	Plug 'tpope/vim-surround' # Vim Surround, which I use for everything
+#   Plug 'jiangmiao/auto-pairs' #  For pairing brackets and quotes
 #	Plug 'preservim/nerdtree'
     Plug 'vim-airline/vim-airline' # Simple statusline for Vim
-    Plug 'jiangmiao/auto-pairs' #  For pairing brackets and quotes
     Plug 'mbbill/undotree'
     Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
@@ -145,4 +145,5 @@ g:airline_theme = 'catppuccin_mocha'
 # nmap <leader>rn <Plug>(coc-rename)
 
 nnoremap <leader>f <cmd>:Ex<cr>
+nnoremap <leader>u <cmd>:UndotreeToggle<cr>
 # g:NERDTreeWinPos = right remember to replace quotes around value

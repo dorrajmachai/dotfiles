@@ -1,0 +1,5 @@
+init.vim.bak
+autoload/
+plugged/
+.netrwhist
+

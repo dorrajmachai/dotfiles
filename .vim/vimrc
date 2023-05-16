@@ -110,3 +110,6 @@ g:airline_theme = 'catppuccin_mocha'
 nnoremap <leader>f <cmd>:Ex<cr>
 nnoremap <leader>u <cmd>:UndotreeToggle<cr>
 # g:NERDTreeWinPos = right ***remember to replace quotes around value
+
+# open held in vertical split on first open
+autocmd Filetype help :wincmd L

@@ -52,7 +52,6 @@ set sidescrolloff=8
 set clipboard="unnamedplus"
 set cmdheight=1
 set timeoutlen=1000
-set updatetime=100
 set nowritebackup
 set fileencoding="utf-8"
 set pumheight=10

@@ -15,4 +15,5 @@ if status is-interactive
 	alias nv "nvim"
     alias v "vim"
 	alias emacs "emacs --maximized"
+	alias xampp "cd /opt/lampp/ && sudo ./manager-linux-x64.run"
 end

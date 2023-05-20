@@ -59,10 +59,10 @@ set cmdheight=1
 
 g:cindent = true
 set conceallevel=0
-set noshowmode
 set signcolumn=yes
 set nowritebackup
 set shiftround
+set smartindent
 ## END GENERAL OPTIONS
 
 # BEGIN KEYMAPS
@@ -87,10 +87,7 @@ vnoremap K :m '<-2<CR>gv=gv
 # BEGIN PLUGINS
 call plug#begin()
 	Plug 'catppuccin/vim', { 'as': 'catppuccin' } # Catppuccin Theme
-#	Plug 'tpope/vim-surround' # Vim Surround, which I use for everything
-#   Plug 'jiangmiao/auto-pairs' #  For pairing brackets and quotes
-#	Plug 'preservim/nerdtree'
-    Plug 'vim-airline/vim-airline' # Simple statusline for Vim
+    Plug 'jiangmiao/auto-pairs' #  For pairing brackets and quotes
     Plug 'mbbill/undotree'
     Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
@@ -105,7 +102,6 @@ g:netrw_liststyle = 3
 
 # END NETRW CONFIGURATION
 colorscheme catppuccin_mocha
-g:airline_theme = 'catppuccin_mocha'
 
 nnoremap <leader>f <cmd>:Ex<cr>
 nnoremap <leader>u <cmd>:UndotreeToggle<cr>
@@ -113,3 +109,20 @@ nnoremap <leader>u <cmd>:UndotreeToggle<cr>
 
 # open held in vertical split on first open
 autocmd Filetype help :wincmd L
+
+# ROLLING MY OWN STATUSLINE
+
+set statusline=
+set statusline+=%.40F
+set statusline+=\ 
+set statusline+=%m
+set statusline+=%=
+set statusline+=%{'ln:'}\ 
+set statusline+=%l\  
+set statusline+=%{'of'}\ 
+set statusline+=%L
+set statusline+=\ \|
+set statusline+=\ 
+set statusline+=%{'col:'}\ 
+set statusline+=%-3c
+

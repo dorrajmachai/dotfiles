@@ -2,16 +2,25 @@ This is my literate Emacs config!
 
 * Basic Options
 
-These items turn Emacs into something more minimal, something more familiar. I like my editors to show me code and nothing else, unless I ask for it.
-
+This section helps make Emacs more minimal. It's just me disabling things I don't want to see.
 #+begin_src emacs-lisp
   (setq inhibit-startup-message t) ;; This line disables the startup message
-  (tool-bar-mode -1) ;; this line should disable the toolbar
+  (tool-bar-mode -1) ;; this line will disable the toolbar
   (menu-bar-mode -1) ;; this line will disable the menu bar
+  (toggle-scroll-bar -1) ;; this line will disable the scroll bar
 #+end_src
 
 * Packages
 
+This section contains the packages I use (and some I probably don't).
+
+** Catppuccin Theme
+I use this theme everywhere. I tend to use the Mocha variant, but I wonder what Latte looks like...
 #+begin_src emacs-lisp
 
+  (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
+  (load-theme 'catppuccin t)
+
+  (setq catppuccin-flavor 'latte)
+  (catppuccin-reload)
 #+end_src

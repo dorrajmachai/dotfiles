@@ -1,0 +1,190 @@
+stages:
+  - build
+  - test
+
+# Cache
+cache: &girara_cache
+  key: "$CI_JOB_NAME-$CI_COMMIT_REF_SLUG"
+  paths:
+    - subprojects/girara
+
+# Archlinux
+build:archlinux:
+  tags:
+    - pwmt
+  stage: build
+  image: registry.pwmt.org/pwmt/gitlab-runner-images/archlinux:latest
+  script:
+    - meson subprojects update
+    - mkdir -p build && cd build
+    - meson --force-fallback-for=girara ..
+    - ninja
+  cache:
+    <<: *girara_cache
+  artifacts:
+    expire_in: 1 day
+    paths:
+      - build
+  except:
+    - tags
+
+test:archlinux:
+  tags:
+    - pwmt
+  stage: test
+  image: registry.pwmt.org/pwmt/gitlab-runner-images/archlinux:latest
+  script:
+    - cd build
+    - ninja test
+  cache:
+    <<: *girara_cache
+    policy: pull
+  dependencies:
+    - build:archlinux
+  except:
+    - tags
+
+# Debian 11 (bullseye)
+build:debian-bullseye:
+  tags:
+    - pwmt
+  stage: build
+  image: registry.pwmt.org/pwmt/gitlab-runner-images/debian:bullseye
+  script:
+    - meson subprojects update
+    - mkdir -p build && cd build
+    - meson --force-fallback-for=girara ..
+    - ninja
+  cache:
+    <<: *girara_cache
+  artifacts:
+    expire_in: 1 day
+    paths:
+      - build
+  except:
+    - tags
+
+test:debian-bullseye:
+  tags:
+    - pwmt
+  stage: test
+  image: registry.pwmt.org/pwmt/gitlab-runner-images/debian:bullseye
+  script:
+    - cd build
+    - ninja test
+  cache:
+    <<: *girara_cache
+    policy: pull
+  dependencies:
+    - build:debian-bullseye
+  except:
+    - tags
+
+# Debian 12 (bookworm)
+build:debian-bookworm:
+  tags:
+    - pwmt
+  stage: build
+  image: registry.pwmt.org/pwmt/gitlab-runner-images/debian:bookworm
+  script:
+    - meson subprojects update
+    - mkdir -p build && cd build
+    - meson --force-fallback-for=girara ..
+    - ninja
+  cache:
+    <<: *girara_cache
+  artifacts:
+    expire_in: 1 day
+    paths:
+      - build
+  except:
+    - tags
+
+test:debian-bookworm:
+  tags:
+    - pwmt
+  stage: test
+  image: registry.pwmt.org/pwmt/gitlab-runner-images/debian:bookworm
+  script:
+    - cd build
+    - ninja test
+  cache:
+    <<: *girara_cache
+    policy: pull
+  dependencies:
+    - build:debian-bookworm
+  except:
+    - tags
+
+# Ubuntu 20.04 LTS (Focal)
+build:ubuntu-focal:
+  tags:
+    - pwmt
+  stage: build
+  image: registry.pwmt.org/pwmt/gitlab-runner-images/ubuntu:focal
+  script:
+    - meson subprojects update
+    - mkdir -p build && cd build
+    - meson --force-fallback-for=girara ..
+    - ninja
+  cache:
+    <<: *girara_cache
+  artifacts:
+    expire_in: 1 day
+    paths:
+      - build
+  except:
+    - tags
+
+test:ubuntu-focal:
+  tags:
+    - pwmt
+  stage: test
+  image: registry.pwmt.org/pwmt/gitlab-runner-images/ubuntu:focal
+  script:
+    - cd build
+    - ninja test
+  cache:
+    <<: *girara_cache
+    policy: pull
+  dependencies:
+    - build:ubuntu-focal
+  except:
+    - tags
+
+# Ubuntu 22.04 LTS (jammy)
+build:ubuntu-jammy:
+  tags:
+    - pwmt
+  stage: build
+  image: registry.pwmt.org/pwmt/gitlab-runner-images/ubuntu:jammy
+  script:
+    - meson subprojects update
+    - mkdir -p build && cd build
+    - meson --force-fallback-for=girara ..
+    - ninja
+  cache:
+    <<: *girara_cache
+  artifacts:
+    expire_in: 1 day
+    paths:
+      - build
+  except:
+    - tags
+
+test:ubuntu-jammy:
+  tags:
+    - pwmt
+  stage: test
+  image: registry.pwmt.org/pwmt/gitlab-runner-images/ubuntu:jammy
+  script:
+    - cd build
+    - ninja test
+  cache:
+    <<: *girara_cache
+    policy: pull
+  dependencies:
+    - build:ubuntu-jammy
+  except:
+    - tags
+

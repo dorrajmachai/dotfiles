@@ -1,5 +1,25 @@
 ;; speed up emacs
+(defvar file-name-handler-alist-original file-name-handler-alist)
 
+(setq gc-cons-threshold most-positive-fixnum
+      gc-cons-percentage 0.6
+      file-name-handler-alist nil
+      site-run-file nil)
+
+(defvar emaget/gc-cons-threshold 100000000)
+
+(add-hook 'emacs-startup-hook
+	  (lambda ()
+	    (setq gc-cons-threshold emaget/gc-cons-threshold
+		  gc-cons-percentage 0.1
+		  file-name-handler-alist file-name-handler-alist-original)))
+
+(add-hook 'minibuffer-setup-hook (lambda ()
+				   (setq gc-cons-threshold (* emaget/gc-cons-threshold 2))))
+
+(add-hook 'minibuffer-exit-hook (lambda ()
+				  (garbage-collect)
+				  (setq gc-cons-threshold emaget/gc-cons-threshold)))
 
 ;; set up packages
 (require 'package)
@@ -12,24 +32,11 @@
 (unless package-archive-contents
   (package-refresh-contents))
 
-(unless (package-installed-p 'use-package)
-			     (package-install 'use-package))
-
-;; set up use-package
-(require 'use-package)
-(setq use-package-always-ensure t)
-
-;; set up org-mode
-(use-package org
-	     :ensure t)
-
-;; set up evil mode
-(use-package evil
-	     :ensure t
-	     :config
-	     (evil-mode 1))
-
 (require 'org)
+
+(setq inhibit-startup-screen t)
+(setq menu-bar-mode -1)
+(setq tool-bar-mode -1)
 
 ;; this line tells emacs to use the literate config file we're writing
 (org-babel-load-file (expand-file-name (concat user-emacs-directory "config.org")))

@@ -1,26 +1,61 @@
 This is my literate Emacs config!
 
 * Basic Options
-
-This section helps make Emacs more minimal. It's just me disabling things I don't want to see.
+Basic options for Emacs
 #+begin_src emacs-lisp
-  (setq inhibit-startup-message t) ;; This line disables the startup message
-  (tool-bar-mode -1) ;; this line will disable the toolbar
-  (menu-bar-mode -1) ;; this line will disable the menu bar
-  (toggle-scroll-bar -1) ;; this line will disable the scroll bar
+  (setq inhibit-startup-message t)
+  (menu-bar-mode -1)
+  (tool-bar-mode -1)
+  (setq tab-width 4)
 #+end_src
+* Appearance
+
+** Catppuccin Theme
+I use this theme everywhere. I tend to use the Mocha variant, but I wonder what Latte looks like...
+#+begin_src emacs-lisp
+  (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
+  (load-theme 'catppuccin t)
+
+  (setq catppuccin-flavor 'mocha)
+  (catppuccin-set-color 'base "#000000") ;; for the voidppuccin goodness
+  (catppuccin-reload)
+#+end_src
+
 
 * Packages
 
 This section contains the packages I use (and some I probably don't).
 
-** Catppuccin Theme
-I use this theme everywhere. I tend to use the Mocha variant, but I wonder what Latte looks like...
+** Use Package
+#+begin_src emacs-lisp
+(unless (package-installed-p 'use-package)
+			     (package-install 'use-package))
+
+;; set up use-package
+(require 'use-package)
+(setq use-package-always-ensure t)
+
+;; set up org-mode
+(use-package org
+	     :ensure t)
+
+;; set up evil mode
+(use-package evil
+	     :ensure t
+	     :config
+	     (evil-mode 1))
+
+
+#+end_src
+
+* Line Numbers
 #+begin_src emacs-lisp
 
-  (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
-  (load-theme 'catppuccin t)
-
-  (setq catppuccin-flavor 'latte)
-  (catppuccin-reload)
 #+end_src
+** Web Development
+The packages I will use for front-end stuff (and eventually PHP) will go here.
+#+begin_src emacs-lisp
+
+#+end_src
+
+** C/C++ Development

@@ -1,2 +1,12 @@
 php autoviv.php
 exit
+php autoviv.php
+:q
+exit
+php autoviv.php
+exit
+ls
+:q
+exit
+php index.php
+exit

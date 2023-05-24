@@ -6,8 +6,11 @@ Basic options for Emacs
   (setq inhibit-startup-message t)
   (menu-bar-mode -1)
   (tool-bar-mode -1)
-  (setq tab-width 4)
+  (scroll-bar-mode -1)
+  (global-display-line-numbers-mode t)
+  (setq display-line-numbers-type 'relative)
 #+end_src
+
 * Appearance
 
 ** Catppuccin Theme
@@ -20,7 +23,6 @@ I use this theme everywhere. I tend to use the Mocha variant, but I wonder what 
   (catppuccin-set-color 'base "#000000") ;; for the voidppuccin goodness
   (catppuccin-reload)
 #+end_src
-
 
 * Packages
 
@@ -45,17 +47,26 @@ This section contains the packages I use (and some I probably don't).
 	     :config
 	     (evil-mode 1))
 
-
 #+end_src
 
-* Line Numbers
-#+begin_src emacs-lisp
-
-#+end_src
 ** Web Development
 The packages I will use for front-end stuff (and eventually PHP) will go here.
 #+begin_src emacs-lisp
+  (use-package web-mode
+		:ensure t)
 
+  (require 'web-mode)
+  (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.css\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
+  (defun emaget/web-mode-hook ()
+    "Web Mode Hooks"
+    (setq web-mode-markup-indent-offset 4)
+    (setq web-mode-css-indent-offset 4)
+    (setq web-mode-code-indent-offset 4)
+  )
+  (add-hook 'web-mode-hook 'emaget/web-mode-hook)
 #+end_src
 
 ** C/C++ Development

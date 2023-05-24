@@ -2,7 +2,9 @@
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
-(setq tab-width 4)
+(global-display-line-numbers-mode t)
+(setq display-line-numbers-type 'relative)
+(set-fringe-mode 10)
 
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 (load-theme 'catppuccin t)
@@ -25,7 +27,25 @@
 ;; set up evil mode
 (use-package evil
 	     :ensure t
+	     :init
+	     (setq evil-want-integration t)
+             (setq evil-want-keybinding nil)
+             (setq evil-want-C-u-scroll t)
 	     :config
 	     (evil-mode 1))
 
+(use-package web-mode
+	      :ensure t)
 
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.css\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
+(defun emaget/web-mode-hook ()
+  "Web Mode Hooks"
+  (setq web-mode-markup-indent-offset 4)
+  (setq web-mode-css-indent-offset 4)
+  (setq web-mode-code-indent-offset 4)
+)
+(add-hook 'web-mode-hook 'emaget/web-mode-hook)

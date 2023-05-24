@@ -34,9 +34,5 @@
 
 (require 'org)
 
-(setq inhibit-startup-screen t)
-(setq menu-bar-mode -1)
-(setq tool-bar-mode -1)
-
 ;; this line tells emacs to use the literate config file we're writing
 (org-babel-load-file (expand-file-name (concat user-emacs-directory "config.org")))

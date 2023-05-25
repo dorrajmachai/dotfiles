@@ -10,12 +10,13 @@ Basic options for Emacs
   (global-display-line-numbers-mode t)
   (setq display-line-numbers-type 'relative)
   (set-fringe-mode 10)
+  (set-frame-font "Iosevka Nerd Font Medium 14" nil t)
 #+end_src
 
 * Appearance
 
 ** Catppuccin Theme
-I use this theme everywhere. I tend to use the Mocha variant, but I wonder what Latte looks like...
+Voidpuccin
 #+begin_src emacs-lisp
   (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
   (load-theme 'catppuccin t)
@@ -46,8 +47,6 @@ This section contains the packages I use (and some I probably don't).
   (use-package evil
 	       :ensure t
 	       :init
-	       (setq evil-want-integration t)
-               (setq evil-want-keybinding nil)
                (setq evil-want-C-u-scroll t)
 	       :config
 	       (evil-mode 1))

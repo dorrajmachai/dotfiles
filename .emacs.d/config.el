@@ -5,6 +5,7 @@
 (global-display-line-numbers-mode t)
 (setq display-line-numbers-type 'relative)
 (set-fringe-mode 10)
+(set-frame-font "Iosevka Nerd Font Medium 14" nil t)
 
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 (load-theme 'catppuccin t)
@@ -28,8 +29,6 @@
 (use-package evil
 	     :ensure t
 	     :init
-	     (setq evil-want-integration t)
-             (setq evil-want-keybinding nil)
              (setq evil-want-C-u-scroll t)
 	     :config
 	     (evil-mode 1))

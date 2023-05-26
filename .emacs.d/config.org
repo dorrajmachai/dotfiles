@@ -1,76 +1,52 @@
-This is my literate Emacs config!
+* Configuring Emacs
 
-* Basic Options
-Basic options for Emacs
-#+begin_src emacs-lisp
-  (setq inhibit-startup-message t)
-  (menu-bar-mode -1)
-  (tool-bar-mode -1)
-  (scroll-bar-mode -1)
-  (global-display-line-numbers-mode t)
-  (setq display-line-numbers-type 'relative)
-  (set-fringe-mode 10)
-  (set-frame-font "Iosevka Nerd Font Medium 14" nil t)
+** Basic Options
+Basic options I use for Emacs
+#+begin_src
+(setq inhibit-startup-message t)
+(menu-bar-mode -1)
+(tool-bar-mode -1)
+(scroll-bar-mode -1)
+(global-display-line-numbers-mode t)
+(setq display-line-numbers-type 'relative)
+(set-fringe-mode 10)
+(set-frame-font "Iosevka Nerd Font Medium 14" nil t)
 #+end_src
 
-* Appearance
+** Appearance
 
-** Catppuccin Theme
-Voidpuccin
-#+begin_src emacs-lisp
-  (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
-  (load-theme 'catppuccin t)
+*** Catppuccin Theme
+Voidppuccin
+#+begin_src
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
+(load-theme 'catppuccin t)
 
-  (setq catppuccin-flavor 'mocha)
-  (catppuccin-set-color 'base "#000000") ;; for the voidppuccin goodness
-  (catppuccin-reload)
+(setq catppuccin-flavor 'mocha)
+(catppuccin-set-color 'base "#000000") ;; for the voidppuccin goodness
+(catppuccin-reload)
 #+end_src
 
-* Packages
+** Packages
 
-This section contains the packages I use (and some I probably don't).
-
-** Use Package
-#+begin_src emacs-lisp
-  (unless (package-installed-p 'use-package)
+*** use-package
+#+begin_src
+(unless (package-installed-p 'use-package)
 			       (package-install 'use-package))
 
-  ;; set up use-package
-  (require 'use-package)
-  (setq use-package-always-ensure t)
+;; set up use-package
+(require 'use-package)
+(setq use-package-always-ensure t)
 
-  ;; set up org-mode
-  (use-package org
+;; set up org-mode
+(use-package org
 	       :ensure t)
 
-  ;; set up evil mode
-  (use-package evil
+;; set up evil mode
+(use-package evil
 	       :ensure t
 	       :init
-               (setq evil-want-C-u-scroll t)
+             (setq evil-want-C-u-scroll t)
 	       :config
 	       (evil-mode 1))
 
 #+end_src
-
-** Web Development
-The packages I will use for front-end stuff (and eventually PHP) will go here.
-#+begin_src emacs-lisp
-  (use-package web-mode
-		:ensure t)
-
-  (require 'web-mode)
-  (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
-  (add-to-list 'auto-mode-alist '("\\.css\\'" . web-mode))
-  (add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
-  (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
-  (defun emaget/web-mode-hook ()
-    "Web Mode Hooks"
-    (setq web-mode-markup-indent-offset 4)
-    (setq web-mode-css-indent-offset 4)
-    (setq web-mode-code-indent-offset 4)
-  )
-  (add-hook 'web-mode-hook 'emaget/web-mode-hook)
-#+end_src
-
-** C/C++ Development

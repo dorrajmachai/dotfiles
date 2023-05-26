@@ -10,3 +10,7 @@ ls
 exit
 php index.php
 exit
+gcc test.c -o test
+./test
+:q
+exit

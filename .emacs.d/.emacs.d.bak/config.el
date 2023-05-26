@@ -5,7 +5,7 @@
 (global-display-line-numbers-mode t)
 (setq display-line-numbers-type 'relative)
 (set-fringe-mode 10)
-(set-frame-font "Iosevka Nerd Font Medium 14" nil t)
+(set-frame-font "Iosevka Nerd Font Medium 16" nil t)
 
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 (load-theme 'catppuccin t)
@@ -29,7 +29,7 @@
 (use-package evil
 	     :ensure t
 	     :init
-             (setq evil-want-C-u-scroll t)
+	     (setq evil-want-C-u-scroll t)
 	     :config
 	     (evil-mode 1))
 
@@ -43,8 +43,8 @@
 (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
 (defun emaget/web-mode-hook ()
   "Web Mode Hooks"
-  (setq web-mode-markup-indent-offset 4)
-  (setq web-mode-css-indent-offset 4)
-  (setq web-mode-code-indent-offset 4)
+  (setq web-mode-markup-indent-offset 2)
+  (setq web-mode-css-indent-offset 2)
+  (setq web-mode-code-indent-offset 2)
 )
 (add-hook 'web-mode-hook 'emaget/web-mode-hook)

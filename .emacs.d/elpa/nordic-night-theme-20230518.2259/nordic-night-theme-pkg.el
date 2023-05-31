@@ -1,0 +1,2 @@
+;;; Generated package description from nordic-night-theme.el  -*- no-byte-compile: t -*-
+(define-package "nordic-night-theme" "20230518.2259" "A darker, more colorful version of the lovely Nord theme" '((emacs "24.1")) :commit "9d1c400434a20af0cfceee8b8e011a05483fdc24" :authors '(("Ashton Wiersdorf" . "mail@wiersdorf.dev")) :maintainers '(("Ashton Wiersdorf" . "mail@wiersdorf.dev")) :maintainer '("Ashton Wiersdorf" . "mail@wiersdorf.dev") :url "https://sr.ht/~ashton314/nordic-night/")

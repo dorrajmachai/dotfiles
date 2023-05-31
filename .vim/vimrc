@@ -1,6 +1,7 @@
 vim9script
 
 # BEGIN VIM-PLUG BOOTSTRAP
+
 # Install vim-plug if not found
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -15,18 +16,23 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 # END VIM-PLUG
 
 # BEGIN GENERAL OPTIONS
+
+# settings to get colors working
 if !has('gui_running')
   set t_Co=256
 endif
 
+# it's not me, it's you
 set nocompatible
 
+# space as leader
 g:mapleader = " "
 
+# better than off
 syntax on
 
 set backspace=indent,eol,start
-set tabstop=4
+set tabstop=4             
 set shiftwidth=4
 set expandtab
 set scrolloff=5
@@ -86,10 +92,11 @@ vnoremap K :m '<-2<CR>gv=gv
 
 # BEGIN PLUGINS
 call plug#begin()
-	Plug 'catppuccin/vim', { 'as': 'catppuccin' } # Catppuccin Theme
+# 	Plug 'catppuccin/vim', { 'as': 'catppuccin' } # Catppuccin Theme
     Plug 'jiangmiao/auto-pairs' #  For pairing brackets and quotes
-    Plug 'mbbill/undotree'
-    Plug 'christoomey/vim-tmux-navigator'
+    Plug 'mbbill/undotree' # for undoing changes visually
+#   Plug 'christoomey/vim-tmux-navigator' 
+    Plug 'bluz71/vim-moonfly-colors'
 call plug#end()
 
 # END PLUGINS
@@ -101,7 +108,7 @@ g:netrw_altv = 1
 g:netrw_liststyle = 3
 
 # END NETRW CONFIGURATION
-colorscheme catppuccin_mocha
+colorscheme moonfly
 
 nnoremap <leader>f <cmd>:Ex<cr>
 nnoremap <leader>u <cmd>:UndotreeToggle<cr>

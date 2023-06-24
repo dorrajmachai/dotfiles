@@ -74,3 +74,55 @@ ls *.c
 cd diction-1.11
 ls *.c
 less diction.c
+clang -Wall 0602.c
+./a.out
+exit
+clang -Wall 0602.c
+./a.out
+cd ..
+mkdir 0605
+exit
+clang -Wall 0605.c
+./a.out
+exit
+clang -Wall 0701.c
+./a.out
+exit
+clang -Wall 0701.c
+./a.out
+exit
+clang -Wall 0701-3.c
+exit
+clang -Wall 0701-3.c
+exit
+exit
+clang -Wall 0701-3.c
+./a.out
+exit
+clang -Wall 0702.c
+./a.out
+exit
+clang -Wall 0702.c
+./a.out
+clear 1
+exit
+exit
+clang -Wall 0702.c
+./a.out
+exit
+git clone https://github.com/catppuccin/emacs/blob/main/catppuccin-theme.el
+exit
+clang -Wall 0703.c
+./a.out
+exit
+clang -Wall 0808-1.c
+./a.out
+./a.out
+./a.out
+exit
+clang -Wall test.c
+./a.out
+clear 1
+clang -Wall test.c
+	./a.out
+exit

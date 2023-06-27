@@ -71,7 +71,6 @@
 
 (load-theme 'catppuccin :no-confirm)
 (setq catppuccin-flavour 'mocha)
-(catppuccin-set-color 'base "#000000")
 (catppuccin-reload)
 
 ;; (add-to-list 'custome-theme-load-path "~/.emacs.d/themes")

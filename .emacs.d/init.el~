@@ -21,7 +21,7 @@
 ;; setting the font
 ;; -------------------
 
-(set-face-attribute 'default nil :font "Iosevka Nerd Font Medium 14") ;; this is my preferred font and font size.
+(set-face-attribute 'default nil :font "Iosevka Nerd Font Medium 16") ;; this is my preferred font and font size.
 
 ;; ---------------------------------------
 ;; keybindings i like and/or want to try
@@ -87,6 +87,10 @@
 				(other .  "linux")))
 
 (setq-default c-basic-offset 4)
+
+;; -------------------------
+;; setting up javascript
+;; -------------------------
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

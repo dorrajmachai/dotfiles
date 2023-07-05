@@ -9,6 +9,7 @@ if status is-interactive
 	fish_add_path "/opt/gradle/gradle-8.0.2/bin" # Java is cool even if Oracle isn't. 
 	fish_add_path "$HOME/.rbenv/bin" # i should learn ruby sometime but i'm probably not going to
 	fish_add_path "$HOME/.rbenv/plugins/ruby-build/bin/" # i need this for Ruby as well
+	fish_add_path "$HOME/clangd_16.0.2/bin/" for C/C++
 
 	eval "$(rbenv init -)" # starting the env manager when fish starts
 	alias exercism "/home/emaget_/bin/exercism-3.1.0-linux-x86_64/exercism" # exercism > leetcode
@@ -16,4 +17,7 @@ if status is-interactive
     alias v "vim" # a Vim alias
 	alias emacs "emacs --maximized" # open emacs big
 	alias xampp "cd /opt/lampp/ && sudo ./manager-linux-x64.run" # for learning PHP from Bro Code
+	alias openrefine "~/openrefine-3.7.2/refine"
+
+	export EDITOR=nvim
 end

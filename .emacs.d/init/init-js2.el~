@@ -1,0 +1,3 @@
+(provide 'init-js2)
+
+(use-package js2-mode)

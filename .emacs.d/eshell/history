@@ -1,0 +1,92 @@
+chmod 0755 run
+./run
+chmod 0755 run
+./run
+./run
+./run
+chmod 0755 run
+./run
+./a.out
+make
+make
+cd ..
+cd 1607
+ls
+ll
+clear
+clear
+clear 1
+ls -l
+make
+cd ../1608
+chmod 0755 run
+./run
+clang -Wall 1610.c
+clang -Wall 1610.c
+./a.out
+clang -Wall 1610.c
+clang -Wall 1610.c
+./a.out
+clang -Wall 1701.c
+cd ..
+cd ..
+cd 17
+cd 1701
+clang -Wall 1701.c
+./a.out
+./a.out
+ls
+mv init-keymaps.el init
+ls
+cd ..
+cd init
+mv todo.org ..
+ls
+cd ..
+ls
+ls -l
+ls
+mv init-use-package.el ini
+ls
+mv ini init-use-package.el
+mv init-use-package.el init
+ls
+cd init
+ls
+ls
+mv init-evil.el init
+ls
+mv init-undo-tree.el init
+ls -l
+mv init-catppuccin.el init
+ls
+ls -l iit
+ls -l init
+ls -l
+mv init-c-cpp.el init-org-mode.el init
+ls
+ls -;
+ls -l
+mv init-which-key.el init
+make
+touch 1702.c
+make 
+make
+make
+./a.out
+./a.out
+./a.out
+./a.out
+clear 1
+cd ../1703
+clear 1
+make
+make
+make
+./a.out
+make
+eval (2 ^ 5)
+eval (^ 2 5)
+eval (* 2 5)
+eval (** 2 5)
+clear 1

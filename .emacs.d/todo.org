@@ -1,0 +1,11 @@
+* TODO:
+
+- [x] Create a TODO
+- [ ] Learn how to navigate buffers more efficiently
+- [ ] Get languages set up (no lsp for this configuration)
+- [ ] Remember how to create lists more efficiently
+- [ ] Improve startup time (it's not bad but I'm a perfectionist)
+- [ ] Learn more about evil-mode
+- [ ] Speed up which-key
+- [x] Play around with undo tree
+- [ ] Basically try to improve evil-mode usage in here and leverage Emacs features on top of that.

@@ -1,0 +1,12 @@
+(undo-tree-save-format-version . 1)
+"039133d9a3ecb32f54ff4ab5b889a28b261399f2"
+[nil nil nil nil (25772 28131 932427 921000) 0 nil]
+([nil nil ((#("(use-package evil-surround
+" 0 1 (fontified t) 1 12 (fontified t face font-lock-keyword-face) 12 13 (fontified t) 13 26 (fontified t face font-lock-constant-face) 26 27 (fontified t)) . 347) (undo-tree-id30 . 27) (undo-tree-id31 . -1) (undo-tree-id32 . -27) (undo-tree-id33 . -26) (t 25772 27925 817686 714000)) nil (25772 28131 932427 350000) 0 nil])
+([nil nil ((#("	:config
+" 0 1 (fontified t) 1 8 (fontified t face font-lock-builtin-face) 8 9 (fontified t)) . 347) (undo-tree-id27 . -8) (undo-tree-id28 . -8) (undo-tree-id29 . -9)) nil (25772 28131 932425 658000) 0 nil])
+([nil nil ((#("	(global-evil-surround-mode 1))
+" 0 31 (fontified t) 31 32 (fontified t)) . 347) (undo-tree-id24 . -31) (undo-tree-id25 . -31) (undo-tree-id26 . -32)) nil (25772 28131 932402 527000) 0 nil])
+([nil current ((#("
+" 0 1 (fontified t)) . -346) (undo-tree-id0 . -1) (undo-tree-id1 . -1) (undo-tree-id2 . -1) (undo-tree-id3 . -1) (undo-tree-id4 . -1) (undo-tree-id5 . -1) (undo-tree-id6 . -1) (undo-tree-id7 . -1) (undo-tree-id8 . -1) (undo-tree-id9 . -1) (undo-tree-id10 . -1) (undo-tree-id11 . -1) (undo-tree-id12 . -1) (undo-tree-id13 . -1) (undo-tree-id14 . -1) (undo-tree-id15 . -1) (undo-tree-id16 . -1) (undo-tree-id17 . -1) (undo-tree-id18 . -1) (undo-tree-id19 . -1) (undo-tree-id20 . -1) (undo-tree-id21 . -1) (undo-tree-id22 . -1) (undo-tree-id23 . -1) 347) nil (25772 28131 932398 693000) 0 nil])
+nil
